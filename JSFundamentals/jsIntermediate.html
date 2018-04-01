@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Part 1
+        function starString(num){
+            var stars = ""
+            for(var i = 1; i <= num; i++){
+                stars += "*"
+            }
+            console.log(stars)
+        }
+        // let stars = starString(10);
+        // console.log(stars)
+
+        // Part 2
+        // function drawStars(arr)
+        // {
+        //     for(var i of arr){
+        //         starString(i)
+        //     }
+        // }
+        // drawStars([5,2, 7, 3, 9])
+
+        // Part 3
+        function drawStars(arr)
+        {
+            for(var i of arr){
+                if(typeof(i) == "number"){
+                    starString(i)
+                }
+                else{
+                    var charString = ""
+                    for(var x = 0; x < i.length; x++){
+                        charString += (i[0]).toLowerCase();  
+                    }
+                    console.log(charString)
+                }
+            }
+        }
+        drawStars([1, "hello", 7, "hey", "what's up"])
+    </script>
+</body>
+</html>

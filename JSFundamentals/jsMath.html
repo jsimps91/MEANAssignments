@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1
+        // function zeroNegativity(arr){
+        //     for(var num of arr){
+        //         if(num < 0){
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+        // zeroNegativity([ -2, 1, 2, 3])
+
+        // 2
+        // function isEven(num){
+        //     if(num % 2 === 0){
+        //         return true;
+        //     }
+        //     return false;
+        // }
+
+        //3
+        // function howManyEven(arr){
+        //     var count = 0;
+        //     for(var num of arr){
+        //         if(isEven(num) === true){
+        //             count += 1;
+        //         }
+        //     }
+        //     console.log(count)
+        // }
+        // howManyEven([1,2,3,4,5])
+
+        // 4
+        // function createDummyArray(n){
+        //     var arr = []
+        //     for(var i = 1; i <= n; i++){
+        //         let num = Math.floor(Math.random()*9) 
+        //         arr.push(num)
+        //     }
+        //     console.log(arr)
+        // }
+        // createDummyArray(8)
+
+        // 5
+        function randomChoice(arr){
+            var random = Math.round(Math.random()*(arr.length-1))
+            console.log(arr[random])
+        }
+        randomChoice([1,2,3,4,5])
+    </script>
+</body>
+</html>
