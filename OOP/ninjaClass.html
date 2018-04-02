@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Ninja(name) {
+            this.name = name;
+            this.health = 100;
+            var speed = 3;
+            var strength = 3;
+
+            this.showStats = function () {
+                console.log(`Name is ${this.name}, speed is ${speed}, stength is ${strength}`)
+                return this
+            }
+
+        }
+        Ninja.prototype.sayName = function(){
+                console.log(this.name)
+                return this;
+            }
+
+        Ninja.prototype.drinkSake = function () {
+            this.health += 10;
+            console.log(`Health is now ${this.health}`)
+            return this
+        }
+        var ninja = new Ninja("Ryu")
+        ninja.sayName().drinkSake().showStats();
+    </script>
+</body>
+
+</html>

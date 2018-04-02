@@ -1,0 +1,10 @@
+body{
+    background-color: green;
+}
+div{
+    display: inline-block;
+    margin: 10px;
+}
+#buttons{
+    display: block;
+}
