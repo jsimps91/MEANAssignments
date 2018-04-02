@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function map(arr, callback){
+            for(var x of arr){
+               console.log( callback(x))
+            }
+        }
+
+        function find(arr, callback){
+            for(var x of arr){
+                if(callback(x)){
+                    console.log( x);
+                    return;
+                }
+            }
+        }
+
+        function filter(arr, callback){
+            var filtered = [];
+            for(var x of arr){
+                if(callback(x)){
+                    filtered.push(x)
+                }
+            }
+            return filtered;
+        }
+
+        function reduce(arr, callback){
+            x = arr[0]
+            for(let i = 1; i < arr.length; i++){
+                x = callback(arr[i], x)
+            }
+            console.log(x)
+        }
+
+        function reject(arr, callback){
+            var rejected = []
+            for(var x of arr){
+                if(!callback(x)){
+                    rejected.push(x)
+                }
+            }
+            return rejected
+        }
+
+        // function greaterThan5(x){
+        //     return x > 5
+        // }
+        // reject([2,4,6,8], greaterThan5)
+
+        // function add(num, sum){
+        //     return num + sum;
+        // }
+
+        // reduce([1,2,3,4], add)
+                // function square(num){
+        //     return num * num;
+        // }
+        
+        // map([1,2,3,4], square)
+    </script>
+</body>
+</html>
