@@ -4,7 +4,7 @@ var app = express();
 app.use(session({secret: 'heythisismysecretkey'}));
 app.use(express.static(__dirname + "/static"));
 
-app.use(session({secret: 'codingdojorocks'}));
+
 app.set('views', __dirname + '/views'); 
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
