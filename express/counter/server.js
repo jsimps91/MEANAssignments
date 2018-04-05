@@ -3,8 +3,6 @@ var session = require('express-session');
 var app = express();
 app.use(session({secret: 'heythisismysecretkey'}));
 app.use(express.static(__dirname + "/static"));
-
-
 app.set('views', __dirname + '/views'); 
 app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
