@@ -26,7 +26,7 @@ io.sockets.on('connection', function (socket) {
         var response = {
             name : data.name, 
             location : data.location,
-            language : data.language,
+            language : data.language,   
             comment : data.comment
         }
         var num = Math.round(Math.random()*1000)
