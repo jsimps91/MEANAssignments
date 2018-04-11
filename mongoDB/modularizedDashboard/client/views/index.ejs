@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elephants!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#delete").click(function(){
+                var id = $(this).attr("data-el")
+                $.post(`/elephants/${id}/delete`)
+            })
+        })
+    </script>
+</head>
+<body>
+   <h1>Elephants!</h1> 
+   <% for(var elephant of allElephants) { %>
+    <a href=elephants/<%= elephant._id %>><h3><%= elephant.name %></h3></a>
+    <h4><a href=elephants/edit/<%= elephant._id %>>Edit</a>  |  <a id="delete" data-el=<%= elephant._id %> href="">Delete</a></h4>
+    <img src=<%= elephant.imgUrl %>>
+   <% } %> 
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Message Board!</h1>
+<form action="message" method="POST">
+    <label>Name</label>
+    <input type="text" name="name">
+    <br>
+    <label>Message</label>
+    <input type="text" name="text">
+    <br>
+    <button>Add Message!</button>
+</form>
+<% if (typeof(errors) !== 'undefined' ) { %>
+    <% for (const key in errors) { %>
+     <h3 class="error"><%= errors[key].message %></h3>
+    <% } %>
+ <% } %>
+<% for(var message of messages){ %>
+    <h3>Name: <%= message.name %></h3>
+    <h3>Message: <%= message.text %></h3>
+    <% for(var comment of message.comments) { %>
+        <p><%= comment.name %>: <%= comment.text %></p>
+    <% } %>    
+    <form action=comment/<%= message._id %> method="POST">
+        <label>Name</label>
+        <input type="text" name="name">
+        <br>
+        <label>Comment</label>
+        <input type="text" name="text">
+        <br>
+        <button>Add Comment!</button>
+    </form>
+<% } %>   
+</body>
+</html> 
