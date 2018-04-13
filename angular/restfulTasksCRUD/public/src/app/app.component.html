@@ -1,0 +1,11 @@
+<button (click) = "getTasksFromService()">Get tasks!</button>
+
+<h1 *ngFor="let task of tasks">{{ task.title }}</h1>
+
+<form (submit)="onSubmit()">
+    <!-- use the json pipe to see how newTask changes in real time -->
+    <p> {{ newTask | json }} </p>
+    <input type="text" name="newTask.title" [(ngModel)]="newTask.title" />
+    <input type="text" name="newTask.description" [(ngModel)]="newTask.description" />
+    <input type="submit" value="Create Task" />
+</form>
