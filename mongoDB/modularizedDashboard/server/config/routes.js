@@ -22,13 +22,3 @@ module.exports = function(app){
         elephants.delete(req, res)
     })
 }
-
-
-//app.post('/:id', function(req, res){
-//     Elephant.update({_id: req.params.id}, req.body, function(err){
-//         if(err){
-//             console.log(err)
-//         }
-//         res.redirect('/')
-//     })
-// })

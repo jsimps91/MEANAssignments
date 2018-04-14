@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+
+    <h1 *ngIf="loggedIn; else loggedOut">
+      Hello
+    </h1>
+    <ng-template #loggedOut>
+      <h1>Please log in</h1>
+    </ng-template>
+  </h1>
+
+  <button (click)="e($event)">Click me</button>
+

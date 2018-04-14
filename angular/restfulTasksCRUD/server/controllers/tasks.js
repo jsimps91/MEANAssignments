@@ -23,6 +23,7 @@ module.exports = {
         })
     },
     create : function(req, res){
+        console.log(req.body)
         var task = new Task(req.body)
         task.save(function(err){
             if(err){

@@ -1,11 +1,21 @@
-<button (click) = "getTasksFromService()">Get tasks!</button>
 
-<h1 *ngFor="let task of tasks">{{ task.title }}</h1>
 
-<form (submit)="onSubmit()">
-    <!-- use the json pipe to see how newTask changes in real time -->
-    <p> {{ newTask | json }} </p>
+<div *ngFor="let task of tasks">
+    <h1> {{ task.title }}</h1>
+    <p>{{ task.description }}</p>
+    <button (click)="deleteTask(task._id)">Delete</button>
+    <button (click)="taskForm(task)">Edit</button>
+</div>
+<br><br>
+<form (submit)="createTask()">
     <input type="text" name="newTask.title" [(ngModel)]="newTask.title" />
     <input type="text" name="newTask.description" [(ngModel)]="newTask.description" />
     <input type="submit" value="Create Task" />
+</form>
+<br><br>
+<form *ngIf="editTask" (submit)="updateTask()">
+    <h3>Edit Task</h3>
+    <input type="text" name="editTask.title" [(ngModel)]="editTask.title" />
+    <input type="text" name="editTask.description" [(ngModel)]="editTask.description" />
+    <input type="submit" value="Update Task"/>
 </form>

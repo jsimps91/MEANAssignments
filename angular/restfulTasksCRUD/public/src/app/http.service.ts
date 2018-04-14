@@ -16,6 +16,14 @@ createTask(task){
   return this._http.post('/tasks/', task)
 }
 
+deleteTask(id){
+  return this._http.delete(`/tasks/${id}`)
+}
+
+updateTask(task){
+  return this._http.put(`/tasks/${task._id}`, task)
+}
+
   constructor(private _http: HttpClient) {
   
 
