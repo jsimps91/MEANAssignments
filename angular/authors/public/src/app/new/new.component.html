@@ -1,0 +1,4 @@
+<input type="string" class="form-control" [(ngModel)]="name">
+<br>
+<button class="btn btn-primary" (click)="createAuthor()" [disabled]="!name">Add Author!</button>
+<h5 *ngIf="message">{{ message }}</h5>

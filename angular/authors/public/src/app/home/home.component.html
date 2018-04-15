@@ -1,0 +1,6 @@
+<a [routerLink]="['/new']">Add an author</a>
+<div *ngFor="let author of authors">
+    <h4>{{ author['name'] }}</h4>
+    <button class="btn btn-light" [routerLink]="['/edit', author['_id']]">Edit</button>
+    <button class="btn btn-danger" (click)="delete(author['_id'])">Delete</button>
+</div>
