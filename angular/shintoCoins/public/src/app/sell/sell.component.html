@@ -1,0 +1,8 @@
+<h1>Sell Shinto Coins</h1>
+<h3>Current shinto coin value: ${{ coinValue }}.00</h3>
+<h3>Current number of shinto coins: {{ coinCount }}</h3>
+<input type="number" min='1'[max]="coinCount" class="form-control" [(ngModel)]="sellAmount">
+<br>
+<button [disabled]="coinCount<1" class="btn btn-primary" (click)="sellCoins()">Sell!</button>
+<h5>{{ message}}</h5>
+

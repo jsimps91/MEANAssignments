@@ -4,12 +4,12 @@ import { HttpService } from './http.service';
 import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { AsdfComponent } from './asdf/asdf.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AsdfComponent
+
   ],
   imports: [
     BrowserModule,

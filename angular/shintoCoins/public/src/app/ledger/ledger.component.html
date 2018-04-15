@@ -1,0 +1,18 @@
+<h1>Browse the ledger</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Amount</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of ledger">
+      <td>{{ t['action'] }}</td>
+      <td>{{ t['amount'] }}</td>
+      <td>${{ t['value'] }}.00</td>
+      <td><button class="btn btn-primary" [routerLink]="['/transaction', t['value']]">Details</button></td>
+    </tr>
+  </tbody>
+</table>
