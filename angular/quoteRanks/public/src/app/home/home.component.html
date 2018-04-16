@@ -1,0 +1,7 @@
+<a [routerLink]="['/new']">Add an author</a>
+<div *ngFor="let author of authors">
+    <h4>{{ author['name'] }}</h4>
+    <button class="btn btn-secondary" [routerLink]="['/viewQuotes', author['_id']]">View quotes</button>
+    <button class="btn btn-primary" [routerLink]="['/edit', author['_id']]">Edit</button>
+
+</div>
