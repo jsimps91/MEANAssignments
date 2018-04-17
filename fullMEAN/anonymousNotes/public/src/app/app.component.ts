@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   ngOnInit(){
     this.note = ""
     this._noteService.getNotes().then(data => {
+      console.log(data)
       this.notes = data['notes']
     })
   }

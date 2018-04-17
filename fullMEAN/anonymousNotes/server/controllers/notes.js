@@ -9,7 +9,7 @@ module.exports = {
                 res.json({status: 'error'})
             }
             else{
-                Note.find({}, function(err, notes){
+                Note.find().sort({createdAt : -1}).exec(function(err, notes){
                     if(err){
                         res.json({status: 'error'})
                     }
@@ -21,7 +21,7 @@ module.exports = {
         })
     },
     getNotes : function(req, res){
-        Note.find({}, function(err, notes){
+        Note.find({}).sort({createdAt : -1}).exec(function(err, notes){
             if(err){
                 res.json({status: 'error'})
             }
