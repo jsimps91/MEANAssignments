@@ -1,0 +1,14 @@
+
+body{
+    margin: 1em;
+    margin-left: 0;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 3px solid #ced4da;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    height: 100px;
+    }

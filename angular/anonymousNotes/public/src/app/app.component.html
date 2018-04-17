@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Anonymous notes</h1>
+  <input class="form-control" type="text" required minlength="3" [(ngModel)]="note" #noteText="ngModel">
+  <br>
+  <button class="btn btn-primary" [disabled]="!noteText.valid" (click)="addNote()">Add note</button>
+  <hr>
+  <app-note *ngFor="let note of notes" [thisNote]="note"> </app-note>
+</div>
