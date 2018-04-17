@@ -30,5 +30,15 @@ export class QuotesComponent implements OnInit {
       this.quotes = data['author']['quotes']
     })
   }
+  voteDown(id){
+    this._authorService.voteDown(id).then(data => {
+      this.quotes = data['author']['quotes']
+    })
+  }
+  voteUp(id){
+    this._authorService.voteUp(id).then(data => {
+      this.quotes = data['author']['quotes']
+    })
+  }
 
 }

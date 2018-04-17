@@ -31,4 +31,10 @@ export class AuthorService {
   deleteQuote(id, authorId){
     return this._http.delete(`api/quotes/${id}/${authorId}`,).map(data => data.json()).toPromise();
   }
+  voteDown(id){
+    return this._http.get(`api/quotes/down/${id}`).map(data => data.json()).toPromise();
+  }
+  voteUp(id){
+    return this._http.get(`api/quotes/up/${id}`).map(data => data.json()).toPromise();
+  }
 }

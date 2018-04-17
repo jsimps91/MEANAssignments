@@ -6,6 +6,7 @@ var QuoteSchema = new mongoose.Schema({
         trim : true
     },
     _author: { type: Schema.Types.ObjectId, ref: 'Author' },
+    votes: { type: Number, default: 0},
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 })

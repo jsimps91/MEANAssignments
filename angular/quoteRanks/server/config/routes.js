@@ -27,6 +27,12 @@ module.exports = function(app){
     app.delete('/api/quotes/:id/:authorId', function(req, res){
         quotes.deleteQuote(req, res)
     })
+    app.get('/api/quotes/down/:id', function(req, res){
+        quotes.downVote(req, res)
+    })
+    app.get('/api/quotes/up/:id', function(req, res){
+        quotes.upVote(req, res)
+    })
     app.all("*", (req,res,next) => {
         res.sendFile(path.resolve("./public/dist/index.html"))
       });

@@ -57,5 +57,55 @@ module.exports = {
                 
             }
         })
+    },
+    downVote : function(req, res){
+        Quote.findOne({_id : req.params.id}, function(err, quote){
+            if(err){
+                res.json({status : 'error'})
+            }
+            else{
+                quote.votes -= 1;
+                quote.save(function(err, quote){
+                    if(err){
+                        res.json({status: 'error'})
+                    }
+                    else{
+                        Author.findOne({_id : quote._author}).populate('quotes').exec(function(err, author){
+                            if(err){
+                                res.json({status: 'error'})
+                            }
+                            else{
+                                res.json({status: 'success', author: author})
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    },
+    upVote : function(req, res){
+        Quote.findOne({_id : req.params.id}, function(err, quote){
+            if(err){
+                res.json({status : 'error'})
+            }
+            else{
+                quote.votes += 1;
+                quote.save(function(err, quote){
+                    if(err){
+                        res.json({status: 'error'})
+                    }
+                    else{
+                        Author.findOne({_id : quote._author}).populate('quotes').exec(function(err, author){
+                            if(err){
+                                res.json({status: 'error'})
+                            }
+                            else{
+                                res.json({status: 'success', author: author})
+                            }
+                        })
+                    }
+                })
+            }
+        })
     }
 }
